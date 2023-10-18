@@ -20,7 +20,26 @@ sudo apt install -y \
 	python-wstool \
 	build-essential \
 	nano git net-tools openssh-server \
+	python-pip \
+	python-bloom \
+	python-rosclean \
+	liburdfdom-tools \
+	python-catkin-lint \
+	python-catkin-tools \
+	ros-melodic-usb-cam \
+	ros-melodic-gmapping \
+	ros-melodic-laser-proc \
+	ros-melodic-map-server \
+	ros-melodic-navigation \
+	ros-melodic-rgbd-launch \
+	ros-melodic-ar-track-alvar \
 	ros-melodic-cartographer-ros \
+	ros-melodic-rosserial-python \
+	ros-melodic-rosserial-server \
+	ros-melodic-teleop-twist-joy \
+	ros-melodic-rosserial-arduino \
+	ros-melodic-teleop-twist-keyboard \
+	ros-melodic-depthimage-to-laserscan \
 
 
 echo "@@@@@ Environment setup @@@@@"

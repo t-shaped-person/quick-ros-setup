@@ -25,11 +25,7 @@ echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
 echo "@@@@@ ros packages clone and catkin_make @@@@@"
 cd ~/ros_ws/src
-git clone https://github.com/omorobot/omo_r1.git
-cd ~/ros_ws/src/omo_r1
-git checkout dev_r1d2
-sleep 5
-cd ~/ros_ws/src
+git clone https://github.com/omorobot/omo_r1.git -b dev_r1d2
 git clone https://github.com/omorobot/ydlidar_ros.git
 cd ~/ros_ws
 catkin_make

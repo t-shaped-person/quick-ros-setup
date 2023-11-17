@@ -38,6 +38,7 @@ sudo apt install -y \
 	ros-noetic-rosserial-arduino \
 	ros-noetic-teleop-twist-keyboard \
 	ros-noetic-depthimage-to-laserscan \
+	ninja-build stow libceres-dev liblua5.2-dev \
 
 
 echo "@@@@@ Environment setup @@@@@"

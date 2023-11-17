@@ -9,6 +9,7 @@ echo "@@@@@ make workspace and catkin_make @@@@@"
 mkdir -p ~/ros_ws/src
 cd ~/ros_ws
 catkin_make
+mkdir -p ~/carto_ws
 
 
 echo "@@@@@ modify bashrc - shotcut, export @@@@@"
@@ -24,17 +25,19 @@ echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
 
 echo "@@@@@ ros packages clone and catkin_make @@@@@"
+cd ~/carto_ws
+wstool init src
+wstool merge -t src https://raw.githubusercontent.com/cartographer-project/cartographer_ros/master/cartographer_ros.rosinstall
+wstool update -t src
+rosdep update
+source /opt/ros/noetic/setup.bash
+sed -i -e "s%<depend>libabsl-dev</depend>%<\!--<depend>libabsl-dev</depend>-->%g" src/cartographer/package.xml
+rosdep install --from-paths src --ignore-src -r -y
+src/cartographer/scripts/install_abseil.sh
+catkin_make_isolated --install --use-ninja -j$(($(nproc) - 1)) -l$(($(nproc) - 1))
 cd ~/ros_ws/src
 git clone https://github.com/omorobot/omo_r1mini.git -b dev_noetic
 git clone https://github.com/omorobot/ydlidar_ros.git
-#git clone https://github.com/YDLIDAR/ydlidar_ros_driver.git
-#git clone https://github.com/YDLIDAR/YDLidar-SDK.git
-#cd ~/ros_ws/src/YDLidar-SDK
-#mkdir build
-#cd build
-#cmake ..
-#make
-#sudo make install
 cd ~/ros_ws
 catkin_make
 

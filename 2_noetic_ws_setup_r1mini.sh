@@ -14,6 +14,7 @@ mkdir -p ~/carto_ws
 
 echo "@@@@@ modify bashrc - shotcut, export @@@@@"
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+echo "source ~/carto_ws/install_isolated/setup.bash --extend" >> ~/.bashrc
 echo "alias sai='sudo apt install'" >> ~/.bashrc
 echo "alias cw='cd ~/ros_ws'" >> ~/.bashrc
 echo "alias cs='cd ~/ros_ws/src'" >> ~/.bashrc

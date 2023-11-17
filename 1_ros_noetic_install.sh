@@ -32,7 +32,6 @@ sudo apt install -y \
 	ros-noetic-map-server \
 	ros-noetic-navigation \
 	ros-noetic-rgbd-launch \
-	ros-noetic-ar-track-alvar \
 	ros-noetic-rosserial-python \
 	ros-noetic-rosserial-server \
 	ros-noetic-teleop-twist-joy \

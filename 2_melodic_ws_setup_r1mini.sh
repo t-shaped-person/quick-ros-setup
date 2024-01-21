@@ -26,15 +26,15 @@ echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 echo "@@@@@ ros packages clone and catkin_make @@@@@"
 cd ~/ros_ws/src
 git clone https://github.com/omorobot/omo_r1mini.git
-git clone https://github.com/omorobot/ydlidar_ros.git
-#git clone https://github.com/YDLIDAR/ydlidar_ros_driver.git
-#git clone https://github.com/YDLIDAR/YDLidar-SDK.git
-#cd ~/ros_ws/src/YDLidar-SDK
-#mkdir build
-#cd build
-#cmake ..
-#make
-#sudo make install
+# git clone https://github.com/omorobot/ydlidar_ros.git
+git clone https://github.com/YDLIDAR/ydlidar_ros_driver.git
+git clone https://github.com/YDLIDAR/YDLidar-SDK.git
+cd ~/ros_ws/src/YDLidar-SDK
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
 cd ~/ros_ws
 catkin_make
 
